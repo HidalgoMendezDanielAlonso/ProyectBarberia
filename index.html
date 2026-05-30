@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💈</text></svg>'>
+<meta charset="UTF-8">
+<title>THE BARBER</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="css/estiloss.css" rel="stylesheet" type="text/css"/>
+
+<script type="module" src="controlador/ReservaControlador.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <h2>💈 THE BARBER</h2>
+    <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#horarios">Horarios</a>
+    <a href="#galeria">Galería</a>
+    <a href="#reservas">Reservas</a>
+    <a href="#sugerencias">Sugerencias</a> <a href="#reclamos">Reclamos</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contacto">Contacto</a>
+    <button id="btnMusica" style="background: none; border: none; font-size: 20px; cursor: pointer; margin-left: 15px;" title="Reproducir música">🎵</button>
+</nav>
+</header>
+
+<section id="inicio">
+    <div class="overlay">
+        <h1>LA MEJOR BARBERÍA DE PUENTE PIEDRA</h1>
+        <p>Estilo, elegancia y cortes de alto nivel</p>
+        <a href="#reservas" class="btn">Reservar Ahora</a>
+    </div>
+</section>
+
+<section id="nosotros">
+    <h2>Nosotros</h2>
+    <p>En THE BARBER, fusionamos la técnica tradicional con las tendencias modernas. Nuestro equipo está comprometido con la excelencia, asegurando que cada cliente no solo obtenga un corte de cabello, sino una experiencia de relajación y estilo inigualable. Más de 5 años de experiencia nos respaldan.</p>
+</section>
+
+<section id="servicios">
+    <h2>NUESTROS SERVICIOS</h2>
+    <div class="tabla-container">
+        <table class="tabla-pro">
+            <thead>
+                <tr>
+                    <th>Servicio</th>
+                    <th>Descripción</th>
+                    <th>Duración</th>
+                    <th>Precio</th>
+                    <th>Reservar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Corte Clásico</td>
+                    <td>Estilo elegante y tradicional</td>
+                    <td>30 min</td>
+                    <td>S/15</td>
+                    <td><button onclick="reservar('Corte Clásico')">Reservar</button></td>
+                </tr>
+                <tr>
+                    <td>Fade Moderno</td>
+                    <td>Degradado moderno profesional</td>
+                    <td>40 min</td>
+                    <td>S/20</td>
+                    <td><button onclick="reservar('Fade Moderno')">Reservar</button></td>
+                </tr>
+                <tr>
+                    <td>Barba Premium</td>
+                    <td>Perfilado y acabado profesional</td>
+                    <td>20 min</td>
+                    <td>S/10</td>
+                    <td><button onclick="reservar('Barba Premium')">Reservar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<section id="horarios">
+        <h2>Horarios de Atención</h2>
+        <div class="tabla-container">
+            <table class="tabla-pro">
+                <thead>
+                   <tr>
+                    <th>Días</th>
+                    <th>Mañana</th>
+                    <th>Tarde</th>
+                    </tr> 
+                </thead>
+                <tr>
+                    <td>Lunes a Viernes</td>
+                    <td>09:00 AM - 01:00 PM</td>
+                    <td>03:00 PM - 09:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Sábados</td>
+                    <td colspan="2">10:00 AM - 10:00 PM (Corrido)</td>
+                </tr>
+                <tr>
+                    <td>Domingos</td>
+                    <td colspan="2">Cerrado</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+<section id="galeria">
+    <h2>Galería</h2>
+    <div class="videos">
+        <iframe src="https://www.youtube.com/embed/89ATGbud5nE" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/VMcX_HHlZio" allowfullscreen></iframe>
+    </div>
+</section>
+
+<section id="reservas">
+    <h2>Reserva</h2>
+    <div class="form-card animacion-formulario">
+        <form id="formReserva">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <input type="tel" id="telefono" placeholder="Teléfono" required>
+            <input type="date" id="fecha" required>
+            <input type="time" id="hora" required>
+            <button type="submit">Reservar</button>
+        </form>
+    </div>
+</section>
+
+<section id="reclamos">
+    <h2>Libro de Reclamaciones</h2>
+    <div class="form-card libro-reclamaciones animacion-formulario">
+        <form id="formReclamo">
+            <h3>Identificación del consumidor reclamante</h3>
+            <input type="text" placeholder="Nombre" required>
+            <input type="text" placeholder="Domicilio" required>
+            <input type="text" placeholder="DNI/CE" required>
+            <input type="tel" placeholder="Teléfono" required>
+            <input type="email" placeholder="Correo electrónico" required>
+
+            <h3>Identificación del bien contratado</h3>
+            <select required>
+                <option value="" disabled selected>Seleccionar tipo de bien</option>
+                <option value="Producto">Producto</option>
+                <option value="Servicio">Servicio</option>
+            </select>
+            <input type="number" placeholder="Monto Reclamado" required>
+            <textarea placeholder="Descripción"></textarea>
+
+            <h3>Detalle de la reclamación y pedido del consumidor</h3>
+            <select required>
+                <option value="" disabled selected>Seleccionar tipo de reclamación</option>
+                <option value="Reclamo">Reclamo</option>
+                <option value="Queja">Queja</option>
+            </select>
+            <textarea placeholder="Detalle" required></textarea>
+            <textarea placeholder="Pedido" required></textarea>
+
+            <button type="submit">ENVIAR HOJA DE RECLAMACIÓN</button>
+        </form>
+    </div>
+</section>
+    
+<section id="sugerencias">
+    <h2>Sugerencias</h2>
+    <p style="margin-bottom: 20px; color: #ccc;">Ayúdanos a mejorar dejándonos tus sugerencias.</p>
+    <div class="form-card animacion-formulario">
+        <form id="formSugerencia">
+            <input type="text" id="sug_nombre" placeholder="Nombre" required>
+            <input type="email" id="sug_email" placeholder="Email" required>
+            <textarea id="sug_mensaje" placeholder="Coloque sus sugerencias" rows="4" required></textarea>
+            <button type="submit">Enviar Sugerencia</button>
+        </form>
+    </div>
+</section>
+
+<section id="faq">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="form-card libro-reclamaciones">
+        <details style="margin-bottom: 15px; text-align: left;">
+            <summary style="color: #d4af37; cursor: pointer;">¿Aceptan pagos con Yape o Plin?</summary>
+            <p style="margin-top: 10px; color: #ccc;">Sí, aceptamos transferencias por Yape, Plin, efectivo y todas las tarjetas.</p>
+        </details>
+        <details style="text-align: left;">
+            <summary style="color: #d4af37; cursor: pointer;">¿Es obligatorio reservar cita?</summary>
+            <p style="margin-top: 10px; color: #ccc;">No es obligatorio, atendemos por orden de llegada. Sin embargo, reservar te asegura no esperar.</p>
+        </details>
+    </div>
+</section>
+
+<section id="contacto">
+    <h2>Contacto y Ubícanos</h2>
+    <p>📍 Puente Piedra - Lima</p>
+    <p>📞 981340253</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d958.0634111517852!2d-77.07313426119988!3d-11.872467472909687!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDUyJzIwLjkiUyA3N8KwMDQnMjEuOCJX!5e0!3m2!1ses-419!2spe!4v1780114063408!5m2!1ses-419!2spe" height="300" style="width: 100%; border:0; border-radius: 10px; margin-top: 20px; max-width: 800px;" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+<footer>
+    <p>@thebarber.pe | © 2026</p>
+</footer>
+
+<a href="https://wa.me/51981340253?text=Hola quiero reservar" class="whatsapp" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+<audio id="audioAmbiental" loop>
+    <source src="audio/barberia.mp3" type="audio/mpeg">
+</audio>
+</body>
+</html>
